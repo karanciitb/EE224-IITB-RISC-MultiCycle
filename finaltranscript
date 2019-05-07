@@ -1,0 +1,58 @@
+vsim work.newdatapath
+add wave -position insertpoint  \
+sim:/newdatapath/clock \
+sim:/newdatapath/reset \
+sim:/newdatapath/DatatoMem \
+sim:/newdatapath/MemWrite \
+sim:/newdatapath/IRWrite \
+sim:/newdatapath/RF_A1 \
+sim:/newdatapath/RF_A2 \
+sim:/newdatapath/RegWrite \
+sim:/newdatapath/RF_D1 \
+sim:/newdatapath/ALUSrcA \
+sim:/newdatapath/PCWrite \
+sim:/newdatapath/ModifyC \
+sim:/newdatapath/ModifyZ \
+sim:/newdatapath/PCSelect \
+sim:/newdatapath/IorD \
+sim:/newdatapath/RF_A3 \
+sim:/newdatapath/RF_D3 \
+sim:/newdatapath/ALUSrcB \
+sim:/newdatapath/ALUControl \
+sim:/newdatapath/Opcode \
+sim:/newdatapath/LASACounter \
+sim:/newdatapath/InstrCZ \
+sim:/newdatapath/ALU_Z \
+sim:/newdatapath/LA_Z \
+sim:/newdatapath/ALU_C \
+sim:/newdatapath/BEQ_Z \
+sim:/newdatapath/PCtoReg \
+sim:/newdatapath/PC_Out \
+sim:/newdatapath/PCtoMem \
+sim:/newdatapath/Memoutput \
+sim:/newdatapath/IROutput \
+sim:/newdatapath/to_RF_D3 \
+sim:/newdatapath/Mem_data_write \
+sim:/newdatapath/T3toMux \
+sim:/newdatapath/LHItoD3 \
+sim:/newdatapath/SE6 \
+sim:/newdatapath/SE9 \
+sim:/newdatapath/D1toMux \
+sim:/newdatapath/D2toT2 \
+sim:/newdatapath/MuxtoT1 \
+sim:/newdatapath/T1_Out \
+sim:/newdatapath/ALU_A \
+sim:/newdatapath/T2_Out \
+sim:/newdatapath/ALU_B \
+sim:/newdatapath/ALU_output \
+sim:/newdatapath/ALU_zero \
+sim:/newdatapath/ALU_carry \
+sim:/newdatapath/Cinternal \
+sim:/newdatapath/Zinternal \
+sim:/newdatapath/to_RF_A1 \
+sim:/newdatapath/to_RF_A2 \
+sim:/newdatapath/to_RF_A3
+force -freeze sim:/newdatapath/clock 1 0, 0 {50 ps} -r 100
+noforce sim:/newdatapath/reset
+force -freeze sim:/newdatapath/reset 1 0 -cancel 150
+run
